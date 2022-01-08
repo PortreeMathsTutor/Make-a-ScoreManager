@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName ="ScoreManager")]
-public class ScoreManager3 : ScriptableObject
+public class ScoreManager : ScriptableObject
 {
   public int score;
 
