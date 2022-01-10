@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Spawner : MonoBehaviour
+{
+    [SerializeField]
+    private ClickToKill badguyPrefab;
+    [SerializeField]
+    private ScoreManager3 scoreManager;
+
+    private float nextSpawnTime;
+    private float respawnRate = 15;
+
+    // Update is called once per frame
+    void Update()
+    {
+      if(Time.time>= nextSpawnTime)
+        {
+            Spawn();
+            nextSpawnTime = Time.time + respawnRate;
+        }
+    }
+
+    private void Spawn()
+    {
+        var badGuy = Instantiate(badguyPrefab, transform.position, Quaternion.identity);
+        badGuy.Initialize(scoreManager);
+    }
+}
