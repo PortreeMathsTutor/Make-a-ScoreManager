@@ -19,7 +19,7 @@ public class Health : MonoBehaviour
         AddScore();
         }
     }
-    public void Initialize(ScoreManager3 scoreManager)
+    public void Initialize(ScoreManager scoreManager)
     {
         this.scoreManager = scoreManager;
     }
